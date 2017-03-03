@@ -4,7 +4,8 @@ import { SessionService } from "./../session.service";
 @Component({
   selector: 'app-my-private-page',
   templateUrl: './my-private-page.component.html',
-  styleUrls: ['./my-private-page.component.css']
+  styleUrls: ['./my-private-page.component.css'],
+  providers: [SessionService]
 })
 export class MyPrivatePageComponent implements OnInit {
   username: string = "";
@@ -13,7 +14,7 @@ export class MyPrivatePageComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    this.username = this.session.user.name,
-    this.secret   = this.session.user.secret;
+    // this.username = this.session.user.name,
+    // this.secret   = this.session.user.secret;
   }
 }
